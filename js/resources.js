@@ -1,4 +1,4 @@
-game.resources = {
+game.resources = [
 
 	/* Graphics. 
 	 * @example
@@ -25,4 +25,4 @@ game.resources = {
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/", channel : 2}
 	 */
-};
+];
