@@ -34,8 +34,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
         me.state.set(me.state.MENU, new game.TitleScreen());
-        game.playscreen = new game.PlayScreen();
-        me.state.set(me.state.PLAY, game.playscreen);
+        me.state.set(me.state.PLAY, new game.PlayScreen());
 
         // Start the game.
         me.state.change(me.state.PLAY);
