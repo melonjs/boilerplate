@@ -1,6 +1,14 @@
 
 /* Game namespace */
 var game = {
+
+	// an object where to store game information
+	data : {
+		// score
+		score : 0
+	},
+	
+	
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
