@@ -6,7 +6,7 @@
 
 game.HUD = game.HUD || {};
 
- 
+
 game.HUD.Container = me.ObjectContainer.extend({
 
 	init: function() {
@@ -50,7 +50,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
 		// make sure we use screen coordinates
 		this.floating = true;
 	},
-	
+
 	/**
 	 * update function
 	 */

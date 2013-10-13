@@ -9,8 +9,8 @@ game.PlayScreen = me.ScreenObject.extend({
 		// add our HUD to the game world	
 		me.game.add(new game.HUD.Container());
 	},
-	
-	
+
+
 	/**	
 	 *  action to perform when leaving this screen (state change)
 	 */
