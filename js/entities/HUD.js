@@ -57,8 +57,8 @@ game.HUD.ScoreItem = me.Renderable.extend({
 	update : function () {
 		// we don't draw anything fancy here, so just
 		// return true if the score has been updated
-		if (this.score !== me.game.score) {	
-			this.score = me.game.score;
+		if (this.score !== game.data.score) {	
+			this.score = game.data.score;
 			return true;
 		}
 		return false;
