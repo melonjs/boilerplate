@@ -43,6 +43,6 @@ var game = {
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
 		// Start the game.
-		me.state.change(me.state.MENU);
+		me.state.change(me.state.PLAY);
 	}
 };
