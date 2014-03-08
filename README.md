@@ -22,7 +22,7 @@ To build:
 
     grunt
 
-Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order.
+Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order. You can also add other files this way. So if you need to copy over jQuery or another file from lib for example.
 
 -------------------------------------------------------------------------------
 Copyright (C) 2011 - 2013, Olivier Biot, Jason Oster
