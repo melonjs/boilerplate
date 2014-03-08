@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'js/resources.js','js/**/*.js'],
+        src: ['lib/melonJS-<%= pkg.melonjs_version %>.js', 'lib/plugins/*.js', 'js/game.js', 'js/resources.js','js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
