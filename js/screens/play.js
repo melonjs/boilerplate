@@ -1,22 +1,29 @@
 game.PlayScreen = me.ScreenObject.extend({
-	/**
-	 *  action to perform on state change
-	 */
-	onResetEvent: function() {
-		// reset the score
-		game.data.score = 0;
+  onResetEvent: function() {
+    var image = me.loader.getImage('melonjs');
+    var bgImage = me.loader.getImage('bg');
 
-		// add our HUD to the game world
-		this.HUD = new game.HUD.Container();
-		me.game.world.addChild(this.HUD);
-	},
+    this.bg = new me.SpriteObject(0, 0, bgImage);
 
+    this.logo = new me.SpriteObject(
+      me.video.getWidth()/2 - image.width/2,
+      me.video.getHeight()/2 - image.height/2,
+      image
+    );
 
-	/**
-	 *  action to perform when leaving this screen (state change)
-	 */
-	onDestroyEvent: function() {
-		// remove the HUD from the game world
-		me.game.world.removeChild(this.HUD);
-	}
+    me.game.world.addChild(this.bg, 1);
+    me.game.world.addChild(this.logo, 2);
+    
+    this.logo.resize(0.1);
+    var tween = new me.Tween(this.logo.scale).to({x: 2, y:2}, 3000)
+        .repeat( Infinity )
+        .yoyo(true)
+        .easing(me.Tween.Easing.Cubic.InOut)
+        .start();
+
+  },
+
+  onDestroyEvent: function() {
+    me.game.world.removeChild(this.logo);
+  }
 });
