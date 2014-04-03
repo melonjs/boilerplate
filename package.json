@@ -1,6 +1,7 @@
 {
   "name": "boilerplate",
   "version": "0.9.11",
+  "melonjs_version": "0.9.11",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-processhtml": "~0.3.0",
