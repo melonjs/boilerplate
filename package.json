@@ -3,6 +3,7 @@
   "version": "0.9.11",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "connect": "~2.13.0",
     "grunt-processhtml": "~0.3.0",
     "grunt-contrib-concat": "~0.2.0",
     "grunt-contrib-clean": "~0.4.0",

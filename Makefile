@@ -1,2 +1,2 @@
 run:
-	python -m SimpleHTTPServer 8001
+	node server.js	
