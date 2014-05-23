@@ -27,7 +27,7 @@ Running the game:
 
 	make run
 
-And you will have the boilerplate example running on http://localhost:8001
+And you will have the boilerplate example running on http://localhost:8000
 
 
 Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order.
