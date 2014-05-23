@@ -25,7 +25,7 @@ To build:
 
 Running the game:
 
-	make run
+	grunt connect	
 
 And you will have the boilerplate example running on http://localhost:8000
 
