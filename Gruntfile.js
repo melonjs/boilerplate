@@ -45,11 +45,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          keepalive: true
+        }
+      }
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
   grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml']);
 }
