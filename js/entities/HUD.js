@@ -7,11 +7,11 @@
 game.HUD = game.HUD || {};
 
 
-game.HUD.Container = me.ObjectContainer.extend({
+game.HUD.Container = me.Container.extend({
 
 	init: function() {
 		// call the constructor
-		this.parent();
+		this._super(me.Container, 'init');
 		
 		// persistent across level change
 		this.isPersistent = true;
@@ -42,7 +42,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
 		
 		// call the parent constructor 
 		// (size does not matter here)
-		this.parent(new me.Vector2d(x, y), 10, 10); 
+		this._super(me.Renderable, 'init', [x, y, 10, 10]); 
 		
 		// local copy of the global score
 		this.score = -1;
