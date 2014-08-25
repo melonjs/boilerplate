@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "0.9.11",
+  "version": "1.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",
     "connect": "~2.13.0",
