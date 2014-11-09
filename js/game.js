@@ -12,17 +12,17 @@ var game = {
 	// Run on page load.
 	"onload" : function () {
 	// Initialize the video.
-	if (!me.video.init("screen",  me.video.CANVAS, 480, 320, true, 'auto')) {
+	if (!me.video.init("screen",  me.video.CANVAS, 960, 640, true, 'auto')) {
 		alert("Your browser does not support HTML5 canvas.");
 		return;
 	}
 
-	// add "#debug" to the URL to enable the debug Panel
-	if (document.location.hash === "#debug") {
-		window.onReady(function () {
-			me.plugin.register.defer(this, debugPanel, "debug");
-		});
-	}
+    // add "#debug" to the URL to enable the debug Panel
+    if (document.location.hash === "#debug") {
+        window.onReady(function () {
+            me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
+        });
+    }
 
 	// Initialize the audio.
 	me.audio.init("mp3,ogg");
