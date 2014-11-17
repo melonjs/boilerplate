@@ -5,9 +5,9 @@ game.resources = [
      * {name: "example", type:"image", src: "data/img/example.png"},
      */
 
-    /* Atlases
+    /* Texture Atlases
      * @example
-     * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
+     * {name: "texture", type: "json", src: "data/img/example_tps.json"},
      */
 
     /* Maps.
