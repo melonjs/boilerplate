@@ -13,6 +13,12 @@ module.exports = function(grunt) {
           src: 'index.css',
           dest: 'build/index.css'
         },{
+          src: 'main.js',
+          dest: 'build/main.js'
+        },{
+          src: 'package.json',
+          dest: 'build/package.json'
+        },{
           src: 'data/**/*',
           dest: 'build/'
         }]
@@ -23,8 +29,7 @@ module.exports = function(grunt) {
         options: {
           process: true,
           data: {
-            title: 'My app',
-            message: 'This is production distribution'
+            title: '<%= pkg.name %>',
           }
         },
         files: {
@@ -53,6 +58,22 @@ module.exports = function(grunt) {
         }
       }
     },
+    'download-atom-shell': {
+      version: '0.21.2',
+      outputDir: 'bin'
+    },
+    asar: {
+      app: {
+        cwd: 'build',
+        src: ['**/*', '!js/app.js'],
+        expand: true,
+        dest: 'bin/' + (
+          process.platform === 'darwin'
+            ? 'Atom.app/Contents/Resources/'
+            : 'resources/'
+        ) + 'app.asar'
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -60,6 +81,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-download-atom-shell');
+  grunt.loadNpmTasks('grunt-asar');
 
   grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml']);
+  grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
 }
