@@ -16,6 +16,9 @@ module.exports = function(grunt) {
           src: 'main.js',
           dest: 'build/main.js'
         },{
+          src: 'manifest.json',
+          dest: 'build/manifest.json'
+        },{
           src: 'package.json',
           dest: 'build/package.json'
         },{
