@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'js/resources.js','js/**/*.js'],
+        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'build/js/resources.js','js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
@@ -74,6 +74,27 @@ module.exports = function(grunt) {
         ) + 'app.asar'
       },
     },
+    resources: {
+      dist: {
+        options: {
+          dest: "build/js/resources.js",
+          varname: "game.resources",
+        },
+        files: [{
+          src: ["data/bgm/**/*", "data/sfx/**/*"],
+          type: "audio"
+        },{
+          src: ["data/img/**/*.png"],
+          type: "image"
+        },{
+          src: ["data/img/**/*.json"],
+          type: "json"
+        },{
+          src: ["data/map/**/*"],
+          type: "tmx"
+        }]
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -84,6 +105,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-download-atom-shell');
   grunt.loadNpmTasks('grunt-asar');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml']);
+  // Custom Tasks
+  grunt.loadTasks("tasks");
+
+  grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml']);
   grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
 }
