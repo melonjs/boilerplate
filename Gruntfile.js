@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'build/js/resources.js','js/**/*.js'],
+        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'build/js/resources.js', 'js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
@@ -80,21 +80,21 @@ module.exports = function(grunt) {
     resources: {
       dist: {
         options: {
-          dest: "build/js/resources.js",
-          varname: "game.resources",
+          dest: 'build/js/resources.js',
+          varname: 'game.resources',
         },
         files: [{
-          src: ["data/bgm/**/*", "data/sfx/**/*"],
-          type: "audio"
+          src: ['data/bgm/**/*', 'data/sfx/**/*'],
+          type: 'audio'
         },{
-          src: ["data/img/**/*.png"],
-          type: "image"
+          src: ['data/img/**/*.png'],
+          type: 'image'
         },{
-          src: ["data/img/**/*.json"],
-          type: "json"
+          src: ['data/img/**/*.json'],
+          type: 'json'
         },{
-          src: ["data/map/**/*"],
-          type: "tmx"
+          src: ['data/map/**/*'],
+          type: 'tmx'
         }]
       }
     }
@@ -103,13 +103,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-download-atom-shell');
   grunt.loadNpmTasks('grunt-asar');
 
   // Custom Tasks
-  grunt.loadTasks("tasks");
+  grunt.loadTasks('tasks');
 
   grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml']);
   grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
