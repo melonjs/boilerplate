@@ -27,6 +27,10 @@ module.exports = function(grunt) {
         }]
       }
     },
+    clean: {
+      app: ['build/js/app.js'],
+      dist: ['build/','bin/'],
+    },
     processhtml: {
       dist: {
         options: {
@@ -112,6 +116,6 @@ module.exports = function(grunt) {
   // Custom Tasks
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml']);
+  grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
   grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
 }
