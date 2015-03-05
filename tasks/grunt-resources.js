@@ -4,22 +4,29 @@ module.exports = function (grunt) {
             options = this.options({
                 "varname" : "game.resources"
             });
-            res = [];
+            res = [],
+            audio = {};
 
         grunt.log.debug("options: " + JSON.stringify(options));
         grunt.log.debug("files: " + JSON.stringify(this.files));
 
         this.files.forEach(function (file) {
             file.src.forEach(function (src) {
-                res.push({
-                    "name"  : path.basename(src, path.extname(src)),
-                    "type"  : file.type,
-                    "src"   : (
-                        file.type === "audio" ?
-                        path.dirname(src) :
-                        src
-                    )
-                });
+                var name = path.basename(src, path.extname(src));
+                if ((file.type !== "audio") || (!audio.hasOwnProperty(name))) {
+                    if (file.type === "audio") {
+                        audio[name] = true;
+                    }
+                    res.push({
+                        "name"  : name,
+                        "type"  : file.type,
+                        "src"   : (
+                            file.type === "audio" ?
+                            path.dirname(src) :
+                            src
+                        )
+                    });
+                }
             });
         });
 
