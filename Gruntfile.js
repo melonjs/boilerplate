@@ -23,7 +23,8 @@ module.exports = function(grunt) {
           dest: 'build/package.json'
         },{
           src: 'data/**/*',
-          dest: 'build/'
+          dest: 'build/',
+          expand: true
         }]
       }
     },
