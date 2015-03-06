@@ -22,7 +22,7 @@ module.exports = function (grunt) {
                         "type"  : file.type,
                         "src"   : (
                             file.type === "audio" ?
-                            path.dirname(src) :
+                            path.dirname(src) + "/" :
                             src
                         )
                     });
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
         grunt.file.write(
             options.dest,
-            options.varname + "=" + JSON.stringify(res) + ";"
+            options.varname + " = " + JSON.stringify(res, null, 4) + ";"
         );
         grunt.log.ok(options.dest)
     }

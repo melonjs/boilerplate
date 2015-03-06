@@ -85,7 +85,7 @@ module.exports = function(grunt) {
     resources: {
       dist: {
         options: {
-          dest: 'build/js/resources.js',
+          dest: 'js/resources.js',
           varname: 'game.resources',
         },
         files: [{
@@ -98,8 +98,11 @@ module.exports = function(grunt) {
           src: ['data/img/**/*.json'],
           type: 'json'
         },{
-          src: ['data/map/**/*'],
+          src: ['data/map/**/*.tmx'],
           type: 'tmx'
+        },{
+          src: ['data/map/**/*.png'],
+          type: 'image'
         }]
       }
     },
