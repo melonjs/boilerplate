@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       outputDir: 'bin'
     },
     asar: {
-      app: {
+      dist: {
         cwd: 'build',
         src: ['**/*', '!js/app.js'],
         expand: true,
