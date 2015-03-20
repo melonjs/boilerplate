@@ -20,15 +20,21 @@ Then in the cloned directory, simply run:
 
     npm install
 
+Running the game:
+
+	grunt serve
+
+And you will have the boilerplate example running on http://localhost:8000
+
+## Building Release Versions
+
 To build:
 
     grunt
 
-Running the game:
+This will create a `build` directory containing the files that can be uploaded to a server, or packaged into a mobile app.
 
-	grunt connect
-
-And you will have the boilerplate example running on http://localhost:8000
+----
 
 Building a standalone desktop release:
 
