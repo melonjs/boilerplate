@@ -66,8 +66,8 @@ module.exports = function(grunt) {
         }
       }
     },
-    'download-atom-shell': {
-      version: '0.21.2',
+    'download-electron': {
+      version: '0.24.0',
       outputDir: 'bin'
     },
     asar: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         expand: true,
         dest: 'bin/' + (
           process.platform === 'darwin'
-            ? 'Atom.app/Contents/Resources/'
+            ? 'Electron.app/Contents/Resources/'
             : 'resources/'
         ) + 'app.asar'
       },
@@ -131,6 +131,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
-  grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
+  grunt.registerTask('dist', ['default', 'download-electron', 'asar']);
   grunt.registerTask('serve', ['resources', 'connect', 'watch']);
 }

@@ -42,15 +42,15 @@ Building a standalone desktop release:
 
 Running the desktop release on Windows:
 
-    .\bin\atom.exe
+    .\bin\electron.exe
 
 Running the desktop release on Mac OS X:
 
-    open ./bin/Atom.app
+    open ./bin/Electron.app
 
 Running the desktop release on Linux:
 
-    ./bin/atom
+    ./bin/electon
 
 Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order.
 
