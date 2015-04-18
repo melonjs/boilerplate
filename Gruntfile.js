@@ -98,8 +98,11 @@ module.exports = function(grunt) {
           src: ['data/img/**/*.json'],
           type: 'json'
         },{
-          src: ['data/map/**/*.tmx'],
+          src: ['data/map/**/*.tmx', 'data/map/**/*.json'],
           type: 'tmx'
+        },{
+          src: ['data/map/**/*.tsx'],
+          type: 'tsx'
         }]
       }
     },
