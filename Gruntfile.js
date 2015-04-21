@@ -124,7 +124,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-download-atom-shell');
+  grunt.loadNpmTasks('grunt-download-electron');
   grunt.loadNpmTasks('grunt-asar');
 
   // Custom Tasks

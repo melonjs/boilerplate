@@ -12,7 +12,7 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-download-atom-shell": "git+https://github.com/atom/grunt-download-atom-shell.git#electron",
+    "grunt-download-electron": "^2.0.0",
     "grunt-processhtml": "^0.3.7"
   }
 }
