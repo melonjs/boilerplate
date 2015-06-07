@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "main.js",
   "devDependencies": {
     "connect": "^3.3.5",
