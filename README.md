@@ -20,6 +20,10 @@ Then in the cloned directory, simply run:
 
     npm install
 
+You must also have `grunt-cli` installed globally:
+
+    npm install -g grunt-cli
+
 Running the game:
 
 	grunt serve
