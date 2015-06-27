@@ -1,12 +1,20 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     concat: {
       dist: {
-        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'build/js/resources.js', 'js/**/*.js'],
+        src: [
+          'lib/melonJS-<%= pkg.version %>.js',
+          'lib/plugins/*.js',
+          'js/game.js',
+          'build/js/resources.js',
+          'js/**/*.js',
+        ],
         dest: 'build/js/app.js'
       }
     },
+
     copy: {
       dist: {
         files: [{
@@ -32,10 +40,12 @@ module.exports = function(grunt) {
         }]
       }
     },
+
     clean: {
       app: ['build/js/app.js'],
       dist: ['build/','bin/'],
     },
+
     processhtml: {
       dist: {
         options: {
@@ -49,6 +59,28 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    replace : {
+      dist : {
+        options : {
+          usePrefix : false,
+          force : true,
+          patterns : [
+            {
+              match : /this\._super\(\s*([\w\.]+)\s*,\s*["'](\w+)["']\s*(,\s*)?/g,
+              replacement : '$1.prototype.$2.apply(this$3'
+            },
+          ],
+        },
+        files : [
+          {
+            src : [ 'build/js/app.js' ],
+            dest : 'build/js/app.js'
+          }
+        ]
+      },
+    },
+
     uglify: {
       options: {
         report: 'min',
@@ -62,6 +94,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     connect: {
       server: {
         options: {
@@ -70,11 +103,13 @@ module.exports = function(grunt) {
         }
       }
     },
+
     'download-electron': {
       version: '0.28.3',
       outputDir: 'bin',
       rebuild: false,
     },
+
     asar: {
       dist: {
         cwd: 'build',
@@ -87,6 +122,7 @@ module.exports = function(grunt) {
         ) + 'app.asar'
       },
     },
+
     resources: {
       dist: {
         options: {
@@ -111,6 +147,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+
     watch: {
       resources: {
         files: ['data/**/*'],
@@ -120,6 +157,7 @@ module.exports = function(grunt) {
         },
       },
     },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -128,6 +166,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks("grunt-replace");
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-download-electron');
   grunt.loadNpmTasks('grunt-asar');
@@ -135,7 +174,15 @@ module.exports = function(grunt) {
   // Custom Tasks
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
+  grunt.registerTask('default', [
+    'resources',
+    'concat',
+    'replace',
+    'uglify',
+    'copy',
+    'processhtml',
+    'clean:app',
+  ]);
   grunt.registerTask('dist', ['default', 'download-electron', 'asar']);
   grunt.registerTask('serve', ['resources', 'connect', 'watch']);
 }
