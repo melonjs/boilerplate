@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "2.1.1",
+  "version": "2.1.3",
   "main": "main.js",
   "devDependencies": {
     "grunt": "^0.4.5",
