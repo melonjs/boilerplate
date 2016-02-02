@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'lib/melonJS-<%= pkg.version %>.js',
+          'lib/melonJS.js',
           'lib/plugins/*.js',
           'js/game.js',
           'build/js/resources.js',
