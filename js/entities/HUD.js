@@ -17,9 +17,6 @@ game.HUD.Container = me.Container.extend({
         // make sure we use screen coordinates
         this.floating = true;
 
-        // make sure our object is always draw first
-        this.z = Infinity;
-
         // give a name
         this.name = "HUD";
 
