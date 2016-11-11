@@ -48,7 +48,7 @@ Running the desktop release on Windows:
 
     .\bin\electron.exe
 
-Running the desktop release on Mac OS X:
+Running the desktop release on macOS:
 
     open ./bin/Electron.app
 
