@@ -105,7 +105,7 @@ module.exports = function(grunt) {
     },
 
     'download-electron': {
-      version: '0.35.4',
+      version: '1.4.6',
       outputDir: 'bin',
       rebuild: false,
     },
