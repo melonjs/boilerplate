@@ -13,9 +13,6 @@ body {
     -ms-touch-action: none;
     touch-action: none;
 
-    /*  Allow the event to go "through" the element and target whatever is "underneath" that element instead. */
-    pointer-events: none;
-
     /* Allow canvas to hit the edges of the browser viewport. */
     margin: 0;
 }
