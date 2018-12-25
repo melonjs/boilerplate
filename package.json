@@ -3,7 +3,7 @@
   "version": "2.1.3",
   "main": "main.js",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.3",
     "grunt-asar": "bwin/grunt-asar#update-asar",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
