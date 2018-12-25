@@ -1,5 +1,3 @@
-
-/* Game namespace */
 var game = {
 
     // an object where to store game information
@@ -12,12 +10,13 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(960, 640, {wrapper : "screen", scale : "auto"})) {
+        if (!me.video.init(160, 120, {wrapper : "screen", scale : "auto", scaleMethod : "fit"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
 
         // Initialize the audio.
+        // Remove .ogg file format later, may increase loading speed.
         me.audio.init("mp3,ogg");
 
         // set and load all resources.
