@@ -10,6 +10,11 @@ game.resources = [
         "src": "data/img/map/Unknown.png"
     },
     {
+        "name": "player-temp",
+        "type": "image",
+        "src": "data/img/sprite/player-temp.png"
+    },
+    {
         "name": "tavern",
         "type": "tmx",
         "src": "data/map/tavern.tmx"
