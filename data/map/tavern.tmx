@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="8" nextobjectid="39">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="8" nextobjectid="42">
  <tileset firstgid="1" source="tavern-temp.tsx"/>
  <tileset firstgid="257" source="Unknown.tsx"/>
  <layer id="1" name="Black" width="20" height="15">
@@ -68,5 +68,7 @@
    <polygon points="0,0 8,8 0,8"/>
   </object>
   <object id="38" x="144" y="80" width="8" height="24"/>
+  <object id="40" x="40" y="120" width="16" height="8"/>
+  <object id="41" x="-8" y="16" width="8" height="8"/>
  </objectgroup>
 </map>
