@@ -1,13 +1,13 @@
 game.resources = [
     {
+        "name": "fireplace",
+        "type": "image",
+        "src": "data/img/map/fireplace.png"
+    },
+    {
         "name": "tavern-temp",
         "type": "image",
         "src": "data/img/map/tavern-temp.png"
-    },
-    {
-        "name": "Unknown",
-        "type": "image",
-        "src": "data/img/map/Unknown.png"
     },
     {
         "name": "player-temp",
