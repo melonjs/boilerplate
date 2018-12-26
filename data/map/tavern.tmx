@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="7" nextobjectid="15">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="7" nextobjectid="38">
  <tileset firstgid="1" source="tavern-temp.tsx"/>
  <tileset firstgid="257" source="Unknown.tsx"/>
  <layer id="1" name="Black" width="20" height="15">
@@ -37,5 +37,30 @@
   <object id="10" x="8" y="0" width="144" height="8"/>
   <object id="12" x="152" y="8" width="8" height="104"/>
   <object id="13" x="56" y="112" width="96" height="8"/>
+  <object id="15" x="8" y="32" width="80" height="8"/>
+  <object id="16" x="104" y="32" width="48" height="8"/>
+  <object id="19" x="64" y="56" width="32" height="16"/>
+  <object id="20" x="72" y="48" width="16" height="32"/>
+  <object id="21" x="24" y="48" width="16" height="32"/>
+  <object id="22" x="16" y="56" width="32" height="16"/>
+  <object id="26" x="120" y="48" width="16" height="32"/>
+  <object id="27" x="112" y="56" width="32" height="16"/>
+  <object id="28" x="64" y="96" width="72" height="8"/>
+  <object id="29" x="72" y="104" width="8" height="8"/>
+  <object id="30" x="88" y="104" width="8" height="8"/>
+  <object id="31" x="104" y="104" width="8" height="8"/>
+  <object id="32" x="120" y="104" width="8" height="8"/>
+  <object id="34" x="8" y="16">
+   <polygon points="0,0 0,-8 8,-8"/>
+  </object>
+  <object id="35" x="144" y="8">
+   <polygon points="0,0 8,8 8,0"/>
+  </object>
+  <object id="36" x="152" y="104">
+   <polygon points="0,0 0,8 -8,8"/>
+  </object>
+  <object id="37" x="8" y="104">
+   <polygon points="0,0 8,8 0,8"/>
+  </object>
  </objectgroup>
 </map>
