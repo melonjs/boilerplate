@@ -1,0 +1,14 @@
+BEFORE REAGONALS
+Add slides (into, into cave, and out of cave).
+Add enemie ai (basic).
+Improve textures (if there is time).
+
+
+BEFORE NATIONALS (if we get there)
+Make permanate textures.
+Add in cleric, jail, and elder level.
+Add in some easter eggs (optional).
+
+
+WHEN SUDMITTING
+Export all .tmx files into .json format. Should improve proformance. MOVE ORIGINAL .TMX FILES AFTERWARD. KEEPING THEM IN THE SAME DIRECTORY CAUSES PROBLEMS, AND DELETING THEM WILL BE PROBLEMATIC.
