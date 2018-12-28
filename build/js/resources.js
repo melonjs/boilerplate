@@ -1,18 +1,33 @@
 game.resources = [
     {
+        "name": "cave",
+        "type": "image",
+        "src": "data/img/map/cave.png"
+    },
+    {
         "name": "fireplace",
         "type": "image",
         "src": "data/img/map/fireplace.png"
     },
     {
-        "name": "tavern-temp",
+        "name": "tavern",
         "type": "image",
-        "src": "data/img/map/tavern-temp.png"
+        "src": "data/img/map/tavern.png"
     },
     {
-        "name": "player-temp",
+        "name": "key",
         "type": "image",
-        "src": "data/img/sprite/player-temp.png"
+        "src": "data/img/sprite/key.png"
+    },
+    {
+        "name": "player",
+        "type": "image",
+        "src": "data/img/sprite/player.png"
+    },
+    {
+        "name": "cave_sub1",
+        "type": "tmx",
+        "src": "data/map/cave_sub1.tmx"
     },
     {
         "name": "tavern",
@@ -20,18 +35,18 @@ game.resources = [
         "src": "data/map/tavern.tmx"
     },
     {
+        "name": "cave",
+        "type": "tsx",
+        "src": "data/map/cave.tsx"
+    },
+    {
+        "name": "fireplace",
+        "type": "tsx",
+        "src": "data/map/fireplace.tsx"
+    },
+    {
         "name": "tavern",
-        "type": "tmx",
-        "src": "data/map/tavern.json"
-    },
-    {
-        "name": "tavern-temp",
         "type": "tsx",
-        "src": "data/map/tavern-temp.tsx"
-    },
-    {
-        "name": "Unknown",
-        "type": "tsx",
-        "src": "data/map/Unknown.tsx"
+        "src": "data/map/tavern.tsx"
     }
 ];
