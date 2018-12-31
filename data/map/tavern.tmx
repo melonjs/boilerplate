@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="8" nextobjectid="45">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="8" nextobjectid="47">
  <tileset firstgid="1" source="tavern.tsx"/>
  <tileset firstgid="257" source="fireplace.tsx"/>
  <layer id="1" name="Black" width="20" height="15">
@@ -29,11 +29,11 @@
     <property name="image" value="player"/>
    </properties>
   </object>
-  <object id="44" name="KeyEntity" x="72" y="16" width="8" height="16">
+  <object id="45" name="me.LevelEntity" x="40" y="120" width="16" height="8">
    <properties>
-    <property name="frameheight" type="int" value="9"/>
-    <property name="framewidth" type="int" value="4"/>
-    <property name="image" value="key"/>
+    <property name="duration" type="int" value="250"/>
+    <property name="fade" type="color" value="#ff000000"/>
+    <property name="to" value="cave_sub1"/>
    </properties>
   </object>
  </objectgroup>
@@ -75,7 +75,6 @@
    <polygon points="0,0 8,8 0,8"/>
   </object>
   <object id="38" x="144" y="80" width="8" height="24"/>
-  <object id="40" x="40" y="120" width="16" height="8"/>
   <object id="41" x="-8" y="16" width="8" height="8"/>
  </objectgroup>
 </map>

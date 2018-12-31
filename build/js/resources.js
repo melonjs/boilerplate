@@ -30,6 +30,11 @@ game.resources = [
         "src": "data/map/cave_sub1.tmx"
     },
     {
+        "name": "cave_sub2",
+        "type": "tmx",
+        "src": "data/map/cave_sub2.tmx"
+    },
+    {
         "name": "tavern",
         "type": "tmx",
         "src": "data/map/tavern.tmx"
