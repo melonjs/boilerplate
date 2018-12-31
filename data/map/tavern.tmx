@@ -29,9 +29,10 @@
     <property name="image" value="player"/>
    </properties>
   </object>
-  <object id="44" name="KeyEntity" x="72" y="16" width="8" height="8">
+  <object id="44" name="KeyEntity" x="72" y="16" width="8" height="16">
    <properties>
-    <property name="framewidth" type="int" value="15"/>
+    <property name="frameheight" type="int" value="9"/>
+    <property name="framewidth" type="int" value="4"/>
     <property name="image" value="key"/>
    </properties>
   </object>
