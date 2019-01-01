@@ -127,3 +127,24 @@ game.KeyEntity = me.CollectableEntity.extend({
     return false
   }
 });
+
+game.unhideEntity = me.Entity.extend({
+  // extending the init function is not mandatory
+  // unless you need to add some extra initialization
+  init: function (x, y, settings) {
+    // call the parent constructor
+    this._super(me.CollectableEntity, 'init', [x, y , settings]);
+    me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 0.8;
+
+  },
+
+  // this function is called by the engine, when
+  // an object is touched by something (here collected)
+  onCollision : function (response, other) {
+    me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 0;
+    // me.game.world.children[1].alpha = 0;
+    me.game.world.removeChild(this);
+    
+    return false
+  }
+});

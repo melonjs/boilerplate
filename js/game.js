@@ -35,6 +35,7 @@ var game = {
         // add our player entity in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("KeyEntity", game.KeyEntity);
+        me.pool.register("unhideEntity", game.unhideEntity);
         
         
         // keyboard stuff
@@ -42,6 +43,12 @@ var game = {
         me.input.bindKey(me.input.KEY.DOWN, "down");
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
+        
+        // add WASD
+        me.input.bindKey(me.input.KEY.W,  "up");
+        me.input.bindKey(me.input.KEY.S, "down");
+        me.input.bindKey(me.input.KEY.A,  "left");
+        me.input.bindKey(me.input.KEY.D, "right");
         
         // Start the game.
         me.state.change(me.state.PLAY);
