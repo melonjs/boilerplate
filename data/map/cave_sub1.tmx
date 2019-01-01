@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="16" height="30" tilewidth="8" tileheight="8" infinite="0" nextlayerid="10" nextobjectid="52">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="16" height="30" tilewidth="8" tileheight="8" infinite="0" nextlayerid="10" nextobjectid="54">
  <tileset firstgid="1" source="cave.tsx"/>
  <layer id="6" name="Base" width="16" height="30">
   <data encoding="base64">
@@ -50,6 +50,18 @@
    </properties>
   </object>
   <object id="50" name="unhideEntity" x="48" y="208" width="8" height="8"/>
+  <object id="52" name="doorEntity" x="40" y="48" width="8" height="8">
+   <properties>
+    <property name="framewidth" type="int" value="8"/>
+    <property name="image" value="door"/>
+   </properties>
+  </object>
+  <object id="53" name="doorEntity" x="56" y="128" width="8" height="8">
+   <properties>
+    <property name="framewidth" type="int" value="8"/>
+    <property name="image" value="door"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="3" name="Enemies (Placeholder)" width="16" height="30">
   <data encoding="base64">

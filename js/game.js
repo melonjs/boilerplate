@@ -3,7 +3,8 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score : 0
+        score : 0,
+        keys: 0
     },
 
     // 160
@@ -36,6 +37,7 @@ var game = {
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("KeyEntity", game.KeyEntity);
         me.pool.register("unhideEntity", game.unhideEntity);
+        me.pool.register("doorEntity", game.doorEntity);
         
         
         // keyboard stuff

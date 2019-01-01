@@ -1,5 +1,10 @@
 game.resources = [
     {
+        "name": "title_screen",
+        "type": "image",
+        "src": "data/img/gui/title_screen.png"
+    },
+    {
         "name": "cave",
         "type": "image",
         "src": "data/img/map/cave.png"
@@ -13,6 +18,11 @@ game.resources = [
         "name": "tavern",
         "type": "image",
         "src": "data/img/map/tavern.png"
+    },
+    {
+        "name": "door",
+        "type": "image",
+        "src": "data/img/sprite/door.png"
     },
     {
         "name": "key",
