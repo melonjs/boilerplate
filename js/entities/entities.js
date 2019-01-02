@@ -160,8 +160,17 @@ game.doorEntity = me.Entity.extend({
     
     this.renderable.addAnimation("closed",  [0]);
     this.renderable.addAnimation("open",  [1]);
-    
     this.renderable.setCurrentAnimation("closed");
+    
+    if (typeof(settings.direction) !== 'undefined') {
+        this.renderable.addAnimation("closed",  [1]);
+        this.renderable.addAnimation("open",  [0]);
+        this.renderable.setCurrentAnimation("closed");
+    } else {
+        this.renderable.addAnimation("closed",  [0]);
+        this.renderable.addAnimation("open",  [1]);
+        this.renderable.setCurrentAnimation("closed");
+    }
   },
 
   // this function is called by the engine, when
