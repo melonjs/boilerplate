@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="23">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="24">
  <tileset firstgid="1" source="cave.tsx"/>
  <layer id="1" name="Base" width="16" height="16">
   <data encoding="base64">
@@ -29,6 +29,7 @@
   <object id="22" x="80" y="16">
    <polygon points="0,0 -8,-8 0,-8"/>
   </object>
+  <object id="23" x="56" y="128" width="16" height="8"/>
  </objectgroup>
  <objectgroup id="4" name="Entities">
   <object id="10" name="mainPlayer" x="56" y="120" width="8" height="8">
