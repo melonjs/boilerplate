@@ -35,6 +35,11 @@ game.resources = [
         "src": "data/img/sprite/player.png"
     },
     {
+        "name": "vampire",
+        "type": "image",
+        "src": "data/img/sprite/vampire.png"
+    },
+    {
         "name": "cave_sub1",
         "type": "tmx",
         "src": "data/map/cave_sub1.tmx"

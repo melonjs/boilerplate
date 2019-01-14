@@ -33,42 +33,55 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
-        var moving = false;
-        if (me.input.isKeyPressed('left')) {
-            moving = true;
-            // flip the sprite on horizontal axis
-            this.renderable.flipX(true);
-
-            // update the entity velocity
-            this.body.vel.x -= this.body.accel.x * me.timer.tick;
-            }
-        else if (me.input.isKeyPressed('right')) {
-            moving = true;
-            // unflip the sprite
-            this.renderable.flipX(false);
-
-            // update the entity velocity
-            this.body.vel.x += this.body.accel.x * me.timer.tick;
-        } else {
-              this.body.vel.x = 0;
-        }
-        if (me.input.isKeyPressed('up')) {
+        if (game.data.frozen) {
             moving = true;
             // flip the sprite on horizontal axis
             this.renderable.flipY(true);
 
             // update the entity velocity
-            this.body.vel.y -= this.body.accel.y * me.timer.tick;
+            if (this.distanceTo(me.game.world.children.find((e)=>{return e.name == 'stopEntity'})) >= 9) { //Return here
+                this.body.vel.y = -0.5 /*(this.body.accel.y / 10)*/ * me.timer.tick;
+            } else {
+                moving = false;
             }
-        else if (me.input.isKeyPressed('down')) {
-            moving = true;
-            // unflip the sprite
-            this.renderable.flipY(false);
-
-            // update the entity velocity
-            this.body.vel.y += this.body.accel.y * me.timer.tick;
         } else {
-              this.body.vel.y = 0;
+            var moving = false;
+            if (me.input.isKeyPressed('left')) {
+                moving = true;
+                // flip the sprite on horizontal axis
+                this.renderable.flipX(true);
+
+                // update the entity velocity
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                }
+            else if (me.input.isKeyPressed('right')) {
+                moving = true;
+                // unflip the sprite
+                this.renderable.flipX(false);
+
+                // update the entity velocity
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+            } else {
+                  this.body.vel.x = 0;
+            }
+            if (me.input.isKeyPressed('up')) {
+                moving = true;
+                // flip the sprite on horizontal axis
+                this.renderable.flipY(true);
+
+                // update the entity velocity
+                this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                }
+            else if (me.input.isKeyPressed('down')) {
+                moving = true;
+                // unflip the sprite
+                this.renderable.flipY(false);
+
+                // update the entity velocity
+                this.body.vel.y += this.body.accel.y * me.timer.tick;
+            } else {
+                  this.body.vel.y = 0;
+            }
         }
         
         if (moving) {
@@ -186,5 +199,39 @@ game.doorEntity = me.Entity.extend({
         }
       }
       return false;
+  }
+});
+
+game.vampireEntity = me.Entity.extend({
+  // extending the init function is not mandatory
+  // unless you need to add some extra initialization
+  init: function (x, y, settings) {
+    // call the parent constructor
+    this._super(me.CollectableEntity, 'init', [x, y , settings]);
+    
+    this.renderable.addAnimation("normal",  [0]);
+    this.renderable.setCurrentAnimation("normal");
+  },
+
+  // this function is called by the engine, when
+  // an object is touched by something (here collected)
+  onCollision : function (response, other) {
+      return false;
+  }
+});
+
+game.stopEntity = me.Entity.extend({
+  // extending the init function is not mandatory
+  // unless you need to add some extra initialization
+  init: function (x, y, settings) {
+    // call the parent constructor
+    this._super(me.CollectableEntity, 'init', [x, y , settings]);
+    game.data.frozen = true;
+  },
+
+  // this function is called by the engine, when
+  // an object is touched by something (here collected)
+  onCollision : function (response, other) {    
+    return false
   }
 });

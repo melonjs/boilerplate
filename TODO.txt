@@ -1,13 +1,15 @@
 BEFORE REAGONALS
-Add slides (into, into cave, and out of cave).
-Add enemie ai (basic).
-Improve textures (if there is time).
+Improve player texture.
+Give ememies basic ai.
+Add gui (keys, lives, messages).
+Make spikes deadly.
 
 
 BEFORE NATIONALS (if we get there)
 Make permanate textures.
 Add in cleric, jail, and elder level.
 Add in some easter eggs (optional).
+Add inventory, and chest gui.
 
 
 WHEN SUDMITTING
