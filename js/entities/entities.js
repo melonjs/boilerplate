@@ -40,7 +40,7 @@ game.PlayerEntity = me.Entity.extend({
 
             // update the entity velocity
             if (this.distanceTo(me.game.world.children.find((e)=>{return e.name == 'stopEntity'})) >= 9) { //Return here
-                this.body.vel.y = -0.5 /*(this.body.accel.y / 10)*/ * me.timer.tick;
+                this.body.vel.y = -0.5 * me.timer.tick;
             } else {
                 moving = false;
             }
