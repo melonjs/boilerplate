@@ -5,7 +5,8 @@ var game = {
         // score
         score : 0,
         keys: 0,
-        frozen: false
+        frozen: false,
+        flag: false
     },
 
     // 160

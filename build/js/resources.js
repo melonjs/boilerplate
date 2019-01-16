@@ -20,6 +20,11 @@ game.resources = [
         "src": "data/img/map/tavern.png"
     },
     {
+        "name": "tobecontinuedimg",
+        "type": "image",
+        "src": "data/img/map/tobecontinuedimg.png"
+    },
+    {
         "name": "door",
         "type": "image",
         "src": "data/img/sprite/door.png"
@@ -68,5 +73,10 @@ game.resources = [
         "name": "tavern",
         "type": "tsx",
         "src": "data/map/tavern.tsx"
+    },
+    {
+        "name": "tobecontinuedimg",
+        "type": "tsx",
+        "src": "data/map/tobecontinuedimg.tsx"
     }
 ];

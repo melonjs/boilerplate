@@ -1,8 +1,9 @@
 BEFORE REAGONALS
-Improve player texture.
+Improve player texture. [DONE!]
 Give ememies basic ai.
 Add gui (keys, lives, messages).
 Make spikes deadly.
+Make a 'To Be Continued' Image. [DONE!]
 
 
 BEFORE NATIONALS (if we get there)

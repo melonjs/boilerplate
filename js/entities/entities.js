@@ -41,6 +41,7 @@ game.PlayerEntity = me.Entity.extend({
                 this.body.vel.y = -0.3 * me.timer.tick;
             } else {
                 moving = false;
+                game.data.flag = true;
             }
         } else {
             var moving = false;
@@ -204,8 +205,22 @@ game.vampireEntity = me.Entity.extend({
     
     this.renderable.addAnimation("normal",  [0]);
     this.renderable.setCurrentAnimation("normal");
+    
+    me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 0;
+    me.game.world.children.find((e)=>{return e.name == 'tobecontinued'}).alpha = 0;
   },
-  
+  update : function (dt) {
+      if (game.data.flag) {
+          me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha += 0.01;
+          if (me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha > 1) {
+              me.game.world.children.find((e)=>{return e.name == 'tobecontinued'}).alpha += 0.1;
+              me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 1;
+          }
+          // this.body.vel.y += 0.5 * me.timer.tick;
+          // this.body.update(dt);
+          
+      }
+  },
   // this function is called by the engine, when
   // an object is touched by something (here collected)
   onCollision : function (response, other) {
@@ -220,6 +235,7 @@ game.stopEntity = me.Entity.extend({
     // call the parent constructor
     this._super(me.CollectableEntity, 'init', [x, y , settings]);
     game.data.frozen = true;
+    me.collision.check(this);
   },
 
   // this function is called by the engine, when
