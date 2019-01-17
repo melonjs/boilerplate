@@ -45,11 +45,6 @@ game.resources = [
         "src": "data/img/map/fireplace.png"
     },
     {
-        "name": "StoneSpikes",
-        "type": "image",
-        "src": "data/img/map/StoneSpikes.png"
-    },
-    {
         "name": "tavern",
         "type": "image",
         "src": "data/img/map/tavern.png"
