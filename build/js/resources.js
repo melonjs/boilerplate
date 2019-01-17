@@ -1,5 +1,35 @@
 game.resources = [
     {
+        "name": "font",
+        "type": "image",
+        "src": "data/fnt/font.png"
+    },
+    {
+        "name": "PressStart2P",
+        "type": "image",
+        "src": "data/fnt/PressStart2P.png"
+    },
+    {
+        "name": "font",
+        "type": "binary",
+        "src": "data/fnt/font.fnt"
+    },
+    {
+        "name": "PressStart2P",
+        "type": "binary",
+        "src": "data/fnt/PressStart2P.fnt"
+    },
+    {
+        "name": "cave-audio",
+        "type": "audio",
+        "src": "data/bgm/"
+    },
+    {
+        "name": "tavern-audio",
+        "type": "audio",
+        "src": "data/bgm/"
+    },
+    {
         "name": "title_screen",
         "type": "image",
         "src": "data/img/gui/title_screen.png"
@@ -13,6 +43,11 @@ game.resources = [
         "name": "fireplace",
         "type": "image",
         "src": "data/img/map/fireplace.png"
+    },
+    {
+        "name": "StoneSpikes",
+        "type": "image",
+        "src": "data/img/map/StoneSpikes.png"
     },
     {
         "name": "tavern",

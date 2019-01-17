@@ -20,10 +20,10 @@ game.PlayerEntity = me.Entity.extend({
         this.alwaysUpdate = true;
         
         // define a basic walking animation (using all frames)
-        this.renderable.addAnimation("walk",  [0, 1, 2, 3, 4, 5]);
+        this.renderable.addAnimation("walk",  [1]);
 
         // define a standing animation (using the first frame)
-        this.renderable.addAnimation("stand",  [0]);
+        this.renderable.addAnimation("stand",  [1]);
 
         // set the standing animation as default
         this.renderable.setCurrentAnimation("walk");
@@ -144,6 +144,11 @@ game.unhideEntity = me.Entity.extend({
     // call the parent constructor
     this._super(me.CollectableEntity, 'init', [x, y , settings]);
     me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 0.9;
+    
+    // Handle Audio
+    me.audio.stopTrack();
+    me.audio.setVolume(0.055);
+    me.audio.playTrack("cave-audio");
 
   },
 
