@@ -4,7 +4,7 @@ var game = {
     data : {
         // score
         score : 0,
-        keys: 0,
+        keys: 5, // TODO: Change Back to Zero
         frozen: false,
         flag: false
     },
@@ -42,6 +42,7 @@ var game = {
         me.pool.register("doorEntity", game.doorEntity);
         me.pool.register("vampireEntity", game.vampireEntity);
         me.pool.register("stopEntity", game.stopEntity);
+        me.pool.register("skelespiderEntity", game.skelespiderEntity);
         
         
         // keyboard stuff
@@ -49,6 +50,8 @@ var game = {
         me.input.bindKey(me.input.KEY.DOWN, "down");
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
+        
+        me.input.bindKey(me.input.KEY.T, "test");
         
         // add WASD
         me.input.bindKey(me.input.KEY.W,  "up");

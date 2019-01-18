@@ -45,6 +45,11 @@ game.resources = [
         "src": "data/img/map/fireplace.png"
     },
     {
+        "name": "stonespikes",
+        "type": "image",
+        "src": "data/img/map/stonespikes.png"
+    },
+    {
         "name": "tavern",
         "type": "image",
         "src": "data/img/map/tavern.png"
@@ -68,6 +73,11 @@ game.resources = [
         "name": "player",
         "type": "image",
         "src": "data/img/sprite/player.png"
+    },
+    {
+        "name": "spider",
+        "type": "image",
+        "src": "data/img/sprite/spider.png"
     },
     {
         "name": "vampire",

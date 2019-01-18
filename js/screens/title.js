@@ -23,7 +23,7 @@ game.TitleScreen = me.ScreenObject.extend({
         this._super(me.Renderable, 'init', [0, 0, me.game.viewport.width, me.game.viewport.height]);
 
         // font for the scrolling text
-        this.font = new me.BitmapFont(me.loader.getBinary('font'), me.loader.getImage('font'));
+        this.font = new me.BitmapFont(me.loader.getBinary('font'), me.loader.getImage('font'), 0.1);
 
         // a tween to animate the arrow
         this.scrollertween = new me.Tween(this).to({scrollerpos: -2200 }, 10000).onComplete(this.scrollover.bind(this)).start();
@@ -44,7 +44,7 @@ game.TitleScreen = me.ScreenObject.extend({
       },
 
       draw : function (renderer) {
-        this.font.draw(renderer, "PRESS ENTER TO PLAY", 20, 240);
+        this.font.draw(renderer, "P R E S S   E N T E R", 65, 130);
         this.font.draw(renderer, this.scroller, this.scrollerpos, 440);
       },
       onDestroyEvent : function () {
