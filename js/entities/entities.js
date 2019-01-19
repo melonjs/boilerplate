@@ -21,7 +21,8 @@ game.PlayerEntity = me.Entity.extend({
         
         this.renderable.addAnimation("stand",  [1]);
         this.renderable.addAnimation("walk",  [1]);
-        this.renderable.addAnimation("die",  [3, 1, 3, 1, 3, 1, 4]);
+        this.renderable.addAnimation("die",  [3, 1, 3, 1, 3, 1]);
+        this.renderable.addAnimation("dead",  [4]);
         
         // set the standing animation as default
         this.renderable.setCurrentAnimation("walk");
@@ -31,6 +32,24 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
+        
+        if (!this.alive) {
+            if (!this.renderable.isCurrentAnimation("die") && !this.renderable.isCurrentAnimation("dead")) {
+//                this.renderable.setCurrentAnimation("die", "stand");
+                this.renderable.setCurrentAnimation("die", "dead");
+            }
+            
+            if (this.renderable.isCurrentAnimation("stand")) {
+                this.alive = true;
+            }
+            
+            this.body.update(dt);
+            
+            me.collision.check(this);
+            
+            return this._super(me.Entity, 'update', [dt]);
+        }
+        
         if (game.data.frozen) {
             moving = true;
 
@@ -105,6 +124,9 @@ game.PlayerEntity = me.Entity.extend({
      */
     onCollision : function (response, other) {
         // Make all other objects solid
+        if (response.b.body.collisionType == me.collision.types.ENEMY_OBJECT) {
+          this.alive = false;
+        }
         return true;
     }
 });
@@ -163,7 +185,7 @@ game.unhideEntity = me.Entity.extend({
   }
 });
 
-game.doorEntity = me.Entity.extend({
+game.doorEntity = me.CollectableEntity.extend({
   // extending the init function is not mandatory
   // unless you need to add some extra initialization
   init: function (x, y, settings) {
@@ -267,11 +289,16 @@ game.stopEntity = me.Entity.extend({
   update : function (dt) {
      var player = me.game.world.children.find((e)=>{return e.name == 'mainPlayer'});
      
-     if (this.distanceTo(player) <= 30) {
-        var angle = this.angleTo(player)
-        this.body.vel.y += Math.sin(angle) * this.body.accel.y * me.timer.tick;
-        this.body.vel.x += Math.cos(angle) * this.body.accel.x * me.timer.tick;
-        this.body.update(dt);
+     if (player.alive) {
+         if (this.distanceTo(player) <= 30) {
+             var angle = this.angleTo(player)
+             this.body.vel.y += Math.sin(angle) * this.body.accel.y * me.timer.tick;
+             this.body.vel.x += Math.cos(angle) * this.body.accel.x * me.timer.tick;
+             this.body.update(dt);
+         } else {
+             this.body.vel.y = this.body.vel.x = 0;
+             this.body.update(dt)
+         }
      }
      
      // handle collisions against other shapes
@@ -289,3 +316,43 @@ game.stopEntity = me.Entity.extend({
       return false;
   }
 });
+
+/*
+game.spikesEntity = me.Entity.extend({
+  // extending the init function is not mandatory
+  // unless you need to add some extra initialization
+  init: function (x, y, settings) {
+    // call the parent constructor
+    this._super(me.CollectableEntity, 'init', [x, y , settings]);
+    
+    this.renderable.addAnimation("closed",  [0]);
+    this.renderable.addAnimation("open",  [1]);
+    this.renderable.setCurrentAnimation("closed");
+    
+    if (typeof(settings.direction) !== 'undefined') {
+        this.renderable.addAnimation("closed",  [1]);
+        this.renderable.addAnimation("open",  [0]);
+        this.renderable.setCurrentAnimation("closed");
+    } else {
+        this.renderable.addAnimation("closed",  [0]);
+        this.renderable.addAnimation("open",  [1]);
+        this.renderable.setCurrentAnimation("closed");
+    }
+  },
+
+  // this function is called by the engine, when
+  // an object is touched by something (here collected)
+  onCollision : function (response, other) {
+      if (this.renderable.isCurrentAnimation("closed")) {
+        if (game.data.keys > 0) {
+            game.data.keys--;
+            this.renderable.setCurrentAnimation("open");
+            this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+        } else {
+            console.log("The door remains stubbornly shut")
+        }
+      }
+      return false;
+  }
+});
+*/
