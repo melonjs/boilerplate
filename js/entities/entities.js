@@ -34,6 +34,7 @@ game.PlayerEntity = me.Entity.extend({
     update : function (dt) {
         
         if (!this.alive) {
+            this.body.vel.y = this.body.vel.x = 0;
             if (!this.renderable.isCurrentAnimation("die") && !this.renderable.isCurrentAnimation("dead")) {
 //                this.renderable.setCurrentAnimation("die", "stand");
                 this.renderable.setCurrentAnimation("die", "dead");
@@ -317,42 +318,17 @@ game.stopEntity = me.Entity.extend({
   }
 });
 
-/*
 game.spikesEntity = me.Entity.extend({
   // extending the init function is not mandatory
   // unless you need to add some extra initialization
   init: function (x, y, settings) {
     // call the parent constructor
-    this._super(me.CollectableEntity, 'init', [x, y , settings]);
-    
-    this.renderable.addAnimation("closed",  [0]);
-    this.renderable.addAnimation("open",  [1]);
-    this.renderable.setCurrentAnimation("closed");
-    
-    if (typeof(settings.direction) !== 'undefined') {
-        this.renderable.addAnimation("closed",  [1]);
-        this.renderable.addAnimation("open",  [0]);
-        this.renderable.setCurrentAnimation("closed");
-    } else {
-        this.renderable.addAnimation("closed",  [0]);
-        this.renderable.addAnimation("open",  [1]);
-        this.renderable.setCurrentAnimation("closed");
-    }
+    this._super(me.Entity, 'init', [x, y , settings]);
   },
 
   // this function is called by the engine, when
   // an object is touched by something (here collected)
   onCollision : function (response, other) {
-      if (this.renderable.isCurrentAnimation("closed")) {
-        if (game.data.keys > 0) {
-            game.data.keys--;
-            this.renderable.setCurrentAnimation("open");
-            this.body.setCollisionMask(me.collision.types.NO_OBJECT);
-        } else {
-            console.log("The door remains stubbornly shut")
-        }
-      }
       return false;
   }
 });
-*/

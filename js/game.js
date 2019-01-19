@@ -4,7 +4,7 @@ var game = {
     data : {
         // score
         score : 0,
-        keys: 5, // TODO: Change Back to Zero
+        keys: 0, // TODO: Change Back to Zero
         frozen: false,
         flag: false
     },
@@ -43,6 +43,7 @@ var game = {
         me.pool.register("vampireEntity", game.vampireEntity);
         me.pool.register("stopEntity", game.stopEntity);
         me.pool.register("skelespiderEntity", game.skelespiderEntity);
+        me.pool.register("spikesEntity", game.spikesEntity);
         
         
         // keyboard stuff
