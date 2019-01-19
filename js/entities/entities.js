@@ -223,15 +223,15 @@ game.doorEntity = me.CollectableEntity.extend({
   }
 });
 
-game.vampireEntity = me.Entity.extend({
+game.vampireEntity = me.Entity.extend({ // TODO: Re-add to tiled. AFTER REIGONALS!!! image: vampire, framewidth: 8
   // extending the init function is not mandatory
   // unless you need to add some extra initialization
   init: function (x, y, settings) {
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
     
-    this.renderable.addAnimation("normal",  [0]);
-    this.renderable.setCurrentAnimation("normal");
+    // this.renderable.addAnimation("normal",  [0]);
+    // this.renderable.setCurrentAnimation("normal");
     
     me.game.world.children.find((e)=>{return e.name == 'Shadow'}).alpha = 0;
     me.game.world.children.find((e)=>{return e.name == 'tobecontinued'}).alpha = 0;
