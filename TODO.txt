@@ -1,9 +1,12 @@
 BEFORE REAGONALS
 Improve player texture. [DONE!]
-Give ememies basic ai.
+Give ememies basic ai. [DONE!]
 Add gui (keys, lives, messages).
-Make spikes deadly.
+Make spikes deadly. [DONE!]
 Make a 'To Be Continued' Image. [DONE!]
+Add Re-spawning Mechanics. [DONE!]
+Improve Gold Textures.
+Improve Spike Textures.
 
 
 BEFORE NATIONALS (if we get there)
@@ -14,4 +17,5 @@ Add inventory, and chest gui.
 
 
 WHEN SUDMITTING
-Export all .tmx files into .json format. Should improve proformance. MOVE ORIGINAL .TMX FILES AFTERWARD. KEEPING THEM IN THE SAME DIRECTORY CAUSES PROBLEMS, AND DELETING THEM WILL BE PROBLEMATIC.
+Export all .tmx files into .json format. Should improve proformance.
+    MOVE ORIGINAL .TMX FILES AFTERWARD. KEEPING THEM IN THE SAME DIRECTORY CAUSES PROBLEMS, AND DELETING THEM WILL BE PROBLEMATIC.
