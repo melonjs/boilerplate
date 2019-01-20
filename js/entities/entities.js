@@ -39,6 +39,20 @@ game.PlayerEntity = me.Entity.extend({
 //                this.renderable.setCurrentAnimation("die", "stand");
                 this.renderable.setCurrentAnimation("die", "dead");
             }
+            if (this.renderable.isCurrentAnimation("dead") && !game.data.wait_for_reload) {
+                game.data.wait_for_reload = true;
+                setTimeout(()=>{
+                    game.data.wait_for_reload = false;
+                    if (--game.data.lives == 0) {
+                        me.levelDirector.loadLevel("tavern")
+                        game.data.lives = 3;
+                        game.data.keys = 0;
+                    } else {
+                        me.levelDirector.reloadLevel();
+                    }                    
+                }, 3000);
+
+            }
             
             if (this.renderable.isCurrentAnimation("stand")) {
                 this.alive = true;

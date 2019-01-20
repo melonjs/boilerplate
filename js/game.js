@@ -6,7 +6,9 @@ var game = {
         score : 0,
         keys: 0, // TODO: Change Back to Zero
         frozen: false,
-        flag: false
+        lives: 3,
+        flag: false,
+        wait_for_reload: false
     },
 
     // 160
