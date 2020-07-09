@@ -2,7 +2,7 @@ melonJS boilerplate
 -------------------------------------------------------------------------------
 
 Sample project featuring :
-- WebGL2 as default renderer
+- WebGL1 as default renderer
 - Video autoscaling
 - Mobile optimized HTML/CSS
 - Swiping disabled on iOS devices
