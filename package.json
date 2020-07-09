@@ -1,16 +1,30 @@
 {
   "name": "boilerplate",
   "version": "2.3.0",
+  "description": "melonJS project boilerplate",
+  "homepage": "http://www.melonjs.org/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melonjs/boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melonjs/boilerplate/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Olivier Biot",
+    "email": "contact@melonjs.org"
+  },
   "main": "main.js",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.2.1",
     "grunt-asar": "github:bwin/grunt-asar#update-asar",
-    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-connect": "^2.1.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-download-electron": "^2.1.4",
     "grunt-processhtml": "^0.4.1",
     "grunt-replace": "^1.0.1"
