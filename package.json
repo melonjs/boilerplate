@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build": "grunt",
-    "serve": "grunt serve",
+    "serve": "npm run build && grunt serve",
     "dist": "grunt"
   }
 }
