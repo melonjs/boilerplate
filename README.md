@@ -11,7 +11,7 @@ Sample project featuring :
 - asset file (resources.js) automatic generation
 - distribution build
 - Standalone build for desktop operating systems
-- ES5 & ES6 shim for noncompliant browser (see index.html)
+- ES5 & ES6 shim for non compliant browser (see index.html)
 
 ## To run distribution
 
