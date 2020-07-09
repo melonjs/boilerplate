@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "main": "main.js",
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -14,5 +14,13 @@
     "grunt-download-electron": "^2.1.4",
     "grunt-processhtml": "^0.4.1",
     "grunt-replace": "^1.0.1"
+  },
+  "dependencies": {
+    "coffeescript": "^2.5.1"
+  },
+  "scripts": {
+    "build": "grunt",
+    "serve": "grunt serve",
+    "dist": "grunt"
   }
 }

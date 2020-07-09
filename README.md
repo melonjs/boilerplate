@@ -2,14 +2,16 @@ melonJS boilerplate
 -------------------------------------------------------------------------------
 
 Sample project featuring :
+- WebGL2 as default renderer
 - Video autoscaling
 - Mobile optimized HTML/CSS
 - Swiping disabled on iOS devices
 - Debug Panel (if #debug)
 - Default icons
+- asset file (resources.js) automatic generation
 - distribution build
 - Standalone build for desktop operating systems
-- Optional ES5 shim for non ES5 compliant browser (see index.html)
+- ES5 & ES6 shim for noncompliant browser (see index.html)
 
 ## To run distribution
 
@@ -19,15 +21,11 @@ To build, be sure you have [node](http://nodejs.org) installed. Clone the projec
 
 Then in the cloned directory, simply run:
 
-    npm install
-
-You must also have `grunt-cli` installed globally:
-
-    npm install -g grunt-cli
+    [sudo] npm install
 
 Running the game:
 
-	grunt serve
+	npm run serve
 
 And you will have the boilerplate example running on http://localhost:8000
 
@@ -35,7 +33,7 @@ And you will have the boilerplate example running on http://localhost:8000
 
 To build:
 
-    grunt
+    npm run build
 
 This will create a `build` directory containing the files that can be uploaded to a server, or packaged into a mobile app.
 
@@ -43,7 +41,7 @@ This will create a `build` directory containing the files that can be uploaded t
 
 Building a standalone desktop release:
 
-    grunt dist
+    npm run dist
 
 Running the desktop release on Windows:
 
