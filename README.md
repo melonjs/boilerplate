@@ -57,6 +57,8 @@ Running the desktop release on Linux:
 
 Note that you may have to edit the file `Gruntfile.js` if you need to better dictate the order your files load in. Note how by default the game.js and resources.js are specified in a specific order.
 
+> Note: by default the boilerplate will use the latest version of melonJS available on NPM, when deploying be sure to specify the version the game has been developed and tested against (e.g. updating the url in the [index.html](https://github.com/melonjs/boilerplate/blob/master/index.html#L27) file to specify the 8.0.1 version : https://cdn.jsdelivr.net/npm/melonjs@8.0.1/dist/melonjs.min.js). Also when used on production, it is strongly advised to remove the debug panel [preload](https://github.com/melonjs/boilerplate/blob/master/index.html#L30).
+
 -------------------------------------------------------------------------------
 Copyright (C) 2011 - 2020 Olivier Biot
 melonJS is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
