@@ -1,5 +1,11 @@
-melonJS boilerplate
--------------------------------------------------------------------------------
+## melonJS boilerplate
+
+## Deprecation warning
+with the release of [melonJS 9.0](https://github.com/melonjs/melonJS/discussions/1052), a new es6 Webpack Boilerplate is now available  :
+
+[https://github.com/melonjs/es6-boilerplate](https://github.com/melonjs/es6-boilerplate)
+
+## Features
 
 Sample project featuring :
 - WebGL1 as default renderer
